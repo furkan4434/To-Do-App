@@ -1,0 +1,51 @@
+{% load static %}<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Task</title>
+    <link rel="stylesheet" type="text/css" href="{% static '/css/main.css' %}">
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+</head>
+
+<body id="body">
+
+    <div class="center-column">
+
+        <h3 class="text-center text-danger">Update Task</h3>
+
+        <form action="" method="POST">
+            <div class="container">
+            {% csrf_token %}
+                <div class="row">
+                    {{form.title}}
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-2 mt-3">
+                        <span class="h6">Complete:</span>
+                    </div>
+
+                    <div class="col-md-10 mt-2 position-absolute top-40 start-45 translate-middle-x ms-5 mt-3">
+
+                        <span class="ms-5 "><span class="ms-2">{{form.complete}}</span></span>
+                    </div>
+                 
+                <input class="btn btn-info input submit text-white mt-2" type="submit" name="Update Task" value="Update Task">
+                </div>
+            </div>
+            
+
+        </form>
+
+    </div>
+
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+</body>
+
+</html>

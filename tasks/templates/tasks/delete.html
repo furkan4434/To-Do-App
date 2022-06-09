@@ -1,0 +1,41 @@
+{% load static %}<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Delete Task</title>
+	<link rel="stylesheet" type="text/css" href="{% static '/css/main.css' %}">
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+</head>
+
+<body id="body">
+
+	<div class="center-column">
+
+		<p class="h6 mb-3">Are you sure you want to delete "{{item.title}}" ?</p>
+
+		<form action="" method="POST">
+
+			{% csrf_token %}
+			<div class="row">
+
+				<div class="col-md-3">
+					<a class="btn btn-sm btn-info mt-0 text-white" href="{% url 'list' %}">Cancel</a>
+				</div>
+
+				<div class="col-md-9">
+					<input class="btn btn-sm btn-danger" type="submit" name="Confirm" value="Delete">
+				</div>
+
+			</div>
+
+		</form>
+	</div>
+
+</body>
+
+</html>
